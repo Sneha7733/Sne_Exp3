@@ -1,0 +1,87 @@
+<html>
+<head>
+ <!--meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"-->
+ <title>calculator</title>
+ <script language="javascript">
+ function cal() {
+ var fis = document.frm.first
+ var sec = document.frm.second
+ var result = document.frm.output
+ var sym = document.getElementById("symbol")
+ if ((fis.value == null) || (fis.value == "")) {
+ alert("please enter the first num")
+ fis.focus();
+ return false
+ }
+ if ((sec.value == null) || (sec.value == "")) {
+ alert("please enter the second number")
+ sec.focus()
+ return false
+ }
+ if (sym.value == "+") {
+ result.value = parseInt(fis.value) + parseInt(sec.value)
+ return false
+ }
+ if (sym.value == "-") {
+ result.value = parseInt(fis.value) - parseInt(sec.value)
+ return false
+ }
+ if (sym.value == "*") {
+ result.value = parseInt(fis.value) * parseInt(sec.value)
+ return false
+ }
+ if (sym.value == "/") {
+ result.value = parseInt(fis.value) / parseInt(sec.value)
+ return false
+ }
+ return true
+ }
+ </script>
+</head>
+<body>
+ <form name="frm" onSubmit="return cal()">
+ <h1>
+ <center>
+ <font color=darkblue face="Lucida Handwriting" size="+4"><u>CALCULATOR</u></font>
+ </center>
+ </h1>
+ <hr color="gray" size="3"><br><br>
+ <table border="8" bgcolor="ivory">
+ <tr>
+ <td>
+ <font color=blue size="+5" face="Baskerville Old Face"><b>Enter the first number:</b></font>
+ </td>
+ <td><input type=text name="first" id="first"></td>
+ </tr>
+ <tr>
+ <td>
+ <font color=blue size="+5" face="Baskerville Old Face"><b>Select the symbol:</b></font>
+ </td>
+ <td><select Id=symbol>
+ <option value="+">+</option>
+ <option value="-">-</option>
+ <option value="*">*</option>
+ <option value="/">/</option>
+ </select></td>
+ <tr>
+ <td>
+ <font color=blue size="+5" face="Baskerville Old Face"><b>Enter the second number:</b></font>
+ </td>
+ <td><input type=text name="second" id="second"></td><br><br>
+ </tr>
+ <tr>
+ <td>
+ <font color=blue size="+5" face="Baskerville Old Face"><b>Result:</b></font>
+ </td>
+ <td><input type="text" name="output" id="output"></td>
+ </tr>
+ <tr>
+ </table><br>
+ <input type=submit value="calculate" onfocus="cal()">
+ </form>
+</body>
+</html>
+
+
+
+
